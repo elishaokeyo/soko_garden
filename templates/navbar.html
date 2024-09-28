@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>navbar</title>
+    
+    
+</head>
+<body>
+    <!-- <h1> this is navbar page</h1> -->
+    <section class="row">
+        <div class="col-md-12">
+           <nav class="navbar navbar-expand-md navbar-light btn-light p-3">
+                   <a href='' class="navbar-brand">Soko <b class="text-success">Garden</b></a>
+                   <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                       <span class="navbar-toggler-icon"></span>
+                  </button>
+
+                   <div class="collapse navbar-collapse" id="navbarCollapse">
+                        <div class="navbar-nav">
+                             <a href='/home' class="nav-item nav-link">Home</a>
+                             <a href='#' class="nav-item nav-link">Blog</a>
+                             <a href='#' class="nav-item nav-link">About US</a>
+                             <a href='/upload' class="nav-item nav-link">upload</a>
+                        </div>
+                     <div class="ms-auto navbar-nav">
+                        {% if session['key'] %}
+                           <b class="text-danger">logged in : {{session["key"]}}</b>
+                           <a href="/logout" class="nav-item nav-link">logout</a>
+                        {% else %}
+                         <!--    TODO Logout-->
+                           <a href="/login" class="nav-item nav-link">login</a>
+                           <a href="/register" class="nav-item nav-link bg-primary" >register</a>
+                        {% endif %}
+                     </div>
+
+                   </div>
+           </nav>
+        </div>
+   </section>  
+  
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="../static/files/css/bootstrap.css">
+</head>
+<body>
+    {% include "navbar.html" %}
+    
+    <div class="container-fluid"> 
+        
+        <section class="row mt-5">
+            
+            <div class="col-md-6">
+                <form action="/login" method="post">
+                 <fieldset>
+                    <legend class="text-primary">login to account</legend>
+                    <input type="text" name="username" placeholder="enter name" required id="" class="form-control">
+                    <br>
+                    <input type="password" name="password" placeholder="enter password" id="" class="form-control">
+                    <br>
+                    <input type="submit" value="login" class="btn btn-primary">
+                    <br><br>
+                    <a href="/register" class="text-success">you do not have an account? click to register</a>
+
+                 </fieldset>
+                </form>
+            </div>
+        </section>
+        <b class="text-danger">{{error}}</b>
+    </div>
+
+
+    <br><br><br><br><br><br><br><br><br>
+    {%include "footer.html"%}
+</body>
+</html>

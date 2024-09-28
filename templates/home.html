@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+    <!-- css suporting files  -->
+    <link rel="stylesheet" href="../static/files/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/files/css/lightslider.css">
+    <link rel="stylesheet" href="../static/files/css/style.css">
+
+    <!-- js surporting files  -->
+    <script src="../static/files/js/bootstrap.bundle.min.js"></script>
+    <script src="../static/files/js/jquery.js"></script>
+    <script src="../static/files/js/lightslider.js"></script>
+    <script src="../static/files/js/script.js"></script>
+</head>
+<body>
+    <!-- include navbar  -->
+    <!-- jinja2 template engine  -->
+    <div class="container-fluid">
+        {% include "navbar.html" %}
+        {% include "carousel.html" %}
+        
+
+        <!-- slider  -->
+        <h1 class="bg-warning">electronics</h1>
+        <br>
+        <section class="slider p-4">
+            <ul class="cs-hidden autoWidth">
+                <!-- loop our electronic items  -->
+                {% for item in electronics %}
+                     <li>
+                        <div class="box">
+                            <div class="slide-img">
+                                <img src="../static/images/{{item[5]}}" alt="" width="50" height="50">
+                                <div class="overlay">
+                                    <a href="/singleitem/{{item[0]}}" class="buy-btn">Buy Now</a>
+                                </div>
+                            </div>
+                            <div class="detail-box">
+                                {{item[1]}} <br>
+                                <b class="text-warning">KES {{item[3]}}</b>
+                              
+
+                            </div>
+                        </div>
+                     </li>
+
+                {% endfor %}
+
+
+
+            </ul>
+              
+
+
+
+        </section>
+        <br>
+        <h1 class="bg-warning">furniture</h1>
+        <section class="slider p-4">
+            <ul class="cs-hidden autoWidth">
+                <!-- loop our electronic items  -->
+                {% for item in furniture %}
+                     <li>
+                        <div class="box">
+                            <div class="slide-img">
+                                <img src="../static/images/{{item[5]}}" alt="" width="50" height="50">
+                                <div class="overlay">
+                                    <a href="/singleitem/{{item[0]}}" class="buy-btn">Buy Now</a>
+                                </div>
+                            </div>
+                            <div class="detail-box">
+                                {{item[1]}} <br>
+                                <b class="text-warning">KES {{item[3]}}</b>
+                              
+
+                            </div>
+                        </div>
+                     </li>
+
+                {% endfor %}
+
+
+
+            </ul>
+              
+
+
+
+        </section>
+
+        <br>
+        <h1 class="bg-warning">clothes</h1>
+        <section class="slider p-4">
+            <ul class="cs-hidden autoWidth">
+                <!-- loop our electronic items  -->
+                {% for item in clothes %}
+                     <li>
+                        <div class="box">
+                            <div class="slide-img">
+                                <img src="../static/images/{{item[5]}}" alt="" width="50" height="50">
+                                <div class="overlay">
+                                    <a href="/singleitem/{{item[0]}}" class="buy-btn">Buy Now</a>
+                                </div>
+                            </div>
+                            <div class="detail-box">
+                                {{item[1]}} <br>
+                                <b class="text-warning">KES {{item[3]}}</b>
+                              
+
+                            </div>
+                        </div>
+                     </li>
+
+                {% endfor %}
+
+
+
+            </ul>
+              
+
+
+
+        </section>
+        {%include "footer.html"%}
+        
+
+
+
+
+    </div>
+</body>
+</html>
